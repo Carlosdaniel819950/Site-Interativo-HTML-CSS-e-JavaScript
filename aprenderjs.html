@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática de JavaScript - Do Básico ao Avançado</title>
+    <meta name="description" content="Prática de JavaScript com exemplos, exercícios interativos e projetos como calculadora e lista de tarefas.">
+    <link rel="stylesheet" href="css/aprenderjs.css">
+    <link rel="stylesheet" href="css/aprender.css">
+</head>
+<body>
+    <nav class="site-nav" aria-label="Navegação do site">
+        <div class="site-nav__inner">
+            <a class="brand" href="index.html">Web Guia</a>
+            <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menu">☰</button>
+            <ul id="primary-nav">
+                <li><a href="index.html">HTML</a></li>
+                <li><a href="aprender.html">CSS</a></li>
+                <li><a href="aprenderjs.html">JavaScript</a></li>
+            </ul>
+            <button id="theme-toggle" class="btn btn-ghost" type="button" aria-pressed="false" aria-label="Alternar modo escuro">🌙 Modo</button>
+        </div>
+    </nav>
+    <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo</a>
+    <header>
+        <h1>Prática de JavaScript</h1>
+        <p>Do básico ao avançado - Aprenda praticando</p>
+    </header>
+
+    <nav aria-label="Navegação principal">
+        <ul>
+            <li><a href="index.html" class="nav-link">HTML</a></li>
+            <li><a href="#basics" class="nav-link">Básico</a></li>
+            <li><a href="#dom" class="nav-link">DOM</a></li>
+            <li><a href="#functions" class="nav-link">Funções</a></li>
+            <li><a href="#objects" class="nav-link">Objetos</a></li>
+            <li><a href="#async" class="nav-link">Async/Await</a></li>
+            <li><a href="#projects" class="nav-link">Projetos</a></li>
+            <li><a href="aprender.html" class="nav-link">CSS</a></li>
+        </ul>
+    </nav>
+
+    <div id="conteudo-principal" class="container">
+        <main>
+            <article id="basics">
+                <h2>JavaScript Básico</h2>
+                <div class="content">
+                    <h3>Variáveis e Tipos de Dados</h3>
+                    <p>JavaScript possui três formas de declarar variáveis: <code>var</code>, <code>let</code> e <code>const</code>.</p>
+                    
+                    <div class="code-example">
+                        <pre><code>// var (escopo de função - evitado em código moderno)
+var nome = "João";
+
+// let (escopo de bloco, valor mutável)
+let idade = 30;
+
+// const (escopo de bloco, valor imutável)
+const PI = 3.14159;</code></pre>
+                    </div>
+                    
+                    <div class="practice">
+                        <h4>Prática: Declaração de Variáveis</h4>
+                        <button id="var-practice">Executar Exemplo de Variáveis</button>
+                        <div class="output" id="var-output"></div>
+                    </div>
+                    
+                    <h3>Operadores</h3>
+                    <p>JavaScript inclui operadores aritméticos, de comparação e lógicos.</p>
+                    
+                    <div class="code-example">
+                        <pre><code>// Aritméticos
+let soma = 5 + 3;       // 8
+let subtracao = 5 - 3;  // 2
+let multiplicacao = 5 * 3;  // 15
+let divisao = 15 / 3;   // 5
+let resto = 15 % 4;     // 3
+
+// Comparação
+let igual = 5 == "5";   // true (com conversão de tipo)
+let estritamenteIgual = 5 === "5";  // false (sem conversão)
+let diferente = 5 != "5"; // false
+let estritamenteDiferente = 5 !== "5"; // true
+
+// Lógicos
+let e = true && false;  // false
+let ou = true || false; // true
+let nao = !true;        // false</code></pre>
+                    </div>
+                    
+                    <div class="practice">
+                        <h4>Prática: Operadores</h4>
+                        <button id="operator-practice">Executar Exemplo de Operadores</button>
+                        <div class="output" id="operator-output"></div>
+                    </div>
+                    
+                    <h3>Estruturas de Controle</h3>
+                    <p>Condicionais e loops controlam o fluxo de execução do código.</p>
+                    
+                    <div class="code-example">
+                        <pre><code>// if-else
+let hora = 14;
+if (hora < 12) {
+    console.log("Bom dia!");
+} else if (hora < 18) {
+    console.log("Boa tarde!");
+} else {
+    console.log("Boa noite!");
+}
+
+// switch
+let dia = 3;
+let nomeDia;
+switch (dia) {
+    case 1: nomeDia = "Domingo"; break;
+    case 2: nomeDia = "Segunda"; break;
+    case 3: nomeDia = "Terça"; break;
+    // ... outros casos
+    default: nomeDia = "Dia inválido";
+}
+
+// for loop
+for (let i = 0; i < 5; i++) {
+    console.log("Número: " + i);
+}
+
+// while loop
+let contador = 0;
+while (contador < 5) {
+    console.log("Contador: " + contador);
+    contador++;
+}</code></pre>
+                    </div>
+                    
+                    <div class="practice">
+                        <h4>Prática: Estruturas de Controle</h4>
+                        <button id="control-practice">Executar Exemplo de Controle</button>
+                        <div class="output" id="control-output"></div>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="dom">
+                <h2>Manipulação do DOM</h2>
+                <div class="content">
+                    <h3>Selecionando Elementos</h3>
+                    <p>O DOM (Document Object Model) permite interagir com elementos HTML.</p>
+                    
+                    <div class="code-example">
+                        <pre><code>// Selecionar por ID
+let elemento = document.getElementById("meuId");
+
+// Selecionar por classe (retorna NodeList)
+let elementos = document.getElementsByClassName("minhaClasse");
+
+// Selecionar por seletor CSS (retorna o primeiro)
+let elemento = document.querySelector(".minhaClasse");
+
+// Selecionar todos por seletor CSS (retorna NodeList)
+let elementos = document.querySelectorAll("div.minhaClasse");</code></pre>
+                    </div>
+                    
+                    <h3>Modificando Elementos</h3>
+                    <p>Podemos alterar conteúdo, estilos e atributos de elementos.</p>
+                    
+                    <div class="code-example">
+                        <pre><code>// Alterar conteúdo de texto
+elemento.textContent = "Novo texto";
+
+// Alterar HTML interno
+elemento.innerHTML = "&lt;strong&gt;Texto em negrito&lt;/strong&gt;";
+
+// Alterar estilos
+elemento.style.color = "blue";
+elemento.style.backgroundColor = "#f0f0f0";
+
+// Alterar atributos
+elemento.setAttribute("alt", "Nova descrição");
+let valor = elemento.getAttribute("src");</code></pre>
+                    </div>
+                    
+                    <h3>Manipulando Eventos</h3>
+                    <p>JavaScript pode responder a ações do usuário.</p>
+                    
+                    <div class="code-example">
+                        <pre><code>// Adicionar evento de clique
+botao.addEventListener("click", function() {
+    console.log("Botão clicado!");
+});
+
+// Evento de teclado
+input.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        console.log("Enter pressionado!");
+    }
+});
+
+// Evento de formulário
+formulario.addEventListener("submit", function(event) {
+    event.preventDefault(); // Impede envio padrão
+    console.log("Formulário enviado!");
+});</code></pre>
+                    </div>
+                    
+                    <div class="practice">
+                        <h4>Prática: Manipulação do DOM</h4>
+                        <div class="dom-practice">
+                            <p id="dom-text">Este texto será modificado.</p>
+                            <button id="change-text">Alterar Texto</button>
+                            <button id="change-color">Alterar Cor</button>
+                            <button id="reset-dom">Restaurar Original</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="functions">
+                <h2>Funções em JavaScript</h2>
+                <div class="content">
+                    <h3>Declaração de Funções</h3>
+                    <p>Funções são blocos de código reutilizáveis.</p>
+                    
+                    <div class="code-example">
+                        <pre><code>// Declaração de função
+function saudacao(nome) {
+    return "Olá, " + nome + "!";
+}
+
+// Expressão de função
+const quadrado = function(x) {
+    return x * x;
+};
+
+// Arrow function (ES6+)
+const cubo = x => x * x * x;
+
+// Função com parâmetros padrão
+function multiplicar(a, b = 1) {
+    return a * b;
+}</code></pre>
+                    </div>
+                    
+                    <div class="practice">
+                        <h4>Prática: Funções</h4>
+                        <div class="function-practice">
+                            <input type="number" id="function-input" placeholder="Digite um número">
+                            <button id="calculate-square">Calcular Quadrado</button>
+                            <button id="calculate-cube">Calcular Cubo</button>
+                            <div class="output" id="function-output"></div>
+                        </div>
+                    </div>
+                    
+                    <h3>Funções de Alta Ordem</h3>
+                    <p>Funções que recebem ou retornam outras funções.</p>
+                    
+                    <div class="code-example">
+                        <pre><code>// Função que retorna outra função
+function multiplicador(fator) {
+    return function(x) {
+        return x * fator;
+    };
+}
+
+const duplicar = multiplicador(2);
+const triplicar = multiplicador(3);
+
+console.log(duplicar(5)); // 10
+console.log(triplicar(5)); // 15
+
+// Função que recebe função como parâmetro
+function aplicarOperacao(numero, operacao) {
+    return operacao(numero);
+}
+
+const resultado = aplicarOperacao(5, x => x * x); // 25</code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="objects">
+                <h2>Objetos e Arrays</h2>
+                <div class="content">
+                    <h3>Trabalhando com Objetos</h3>
+                    <p>Objetos são coleções de pares chave-valor.</p>
+                    
+                    <div class="code-example">
+                        <pre><code>// Criar objeto
+let pessoa = {
+    nome: "Maria",
+    idade: 25,
+    profissao: "Desenvolvedora",
+    saudacao: function() {
+        return "Olá, meu nome é " + this.nome;
+    }
+};
+
+// Acessar propriedades
+console.log(pessoa.nome); // "Maria"
+console.log(pessoa["idade"]); // 25
+
+// Adicionar propriedade
+pessoa.email = "maria@email.com";
+
+// Métodos de objeto
+console.log(Object.keys(pessoa)); // ["nome", "idade", "profissao", "saudacao"]
+console.log(Object.values(pessoa)); // ["Maria", 25, "Desenvolvedora", function]</code></pre>
+                    </div>
+                    
+                    <h3>Trabalhando com Arrays</h3>
+                    <p>Arrays são listas ordenadas de valores.</p>
+                    
+                    <div class="code-example">
+                        <pre><code>// Criar array
+let frutas = ["maçã", "banana", "laranja"];
+
+// Acessar elementos
+console.log(frutas[0]); // "maçã"
+
+// Métodos comuns de array
+frutas.push("uva"); // Adiciona ao final
+frutas.pop(); // Remove do final
+frutas.unshift("morango"); // Adiciona ao início
+frutas.shift(); // Remove do início
+
+// Métodos de iteração
+frutas.forEach(function(fruta, index) {
+    console.log(index + ": " + fruta);
+});
+
+let numeros = [1, 2, 3, 4, 5];
+let dobros = numeros.map(num => num * 2); // [2, 4, 6, 8, 10]
+let pares = numeros.filter(num => num % 2 === 0); // [2, 4]
+let soma = numeros.reduce((total, num) => total + num, 0); // 15</code></pre>
+                    </div>
+                    
+                    <div class="practice">
+                        <h4>Prática: Objetos e Arrays</h4>
+                        <button id="object-practice">Criar e Manipular Objeto</button>
+                        <button id="array-practice">Manipular Array</button>
+                        <div class="output" id="object-output"></div>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="async">
+                <h2>JavaScript Assíncrono</h2>
+                <div class="content">
+                    <h3>Callbacks, Promises e Async/Await</h3>
+                    <p>JavaScript oferece várias formas de lidar com operações assíncronas.</p>
+                    
+                    <div class="code-example">
+                        <pre><code>// Callback (antigo)
+function fazerAlgoAssincrono(callback) {
+    setTimeout(() => {
+        callback("Dados recebidos");
+    }, 1000);
+}
+
+fazerAlgoAssincrono(function(dados) {
+    console.log(dados);
+});
+
+// Promise (ES6+)
+function fazerAlgoAssincrono() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Dados recebidos");
+            // ou reject("Erro");
+        }, 1000);
+    });
+}
+
+fazerAlgoAssincrono()
+    .then(dados => console.log(dados))
+    .catch(erro => console.error(erro));
+
+// Async/Await (ES8+)
+async function processarDados() {
+    try {
+        const dados = await fazerAlgoAssincrono();
+        console.log(dados);
+    } catch (erro) {
+        console.error(erro);
+    }
+}
+
+processarDados();</code></pre>
+                    </div>
+                    
+                    <div class="practice">
+                        <h4>Prática: JavaScript Assíncrono</h4>
+                        <button id="simulate-async">Simular Operação Assíncrona</button>
+                        <div class="output" id="async-output"></div>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="projects">
+                <h2>Projetos Práticos</h2>
+                <div class="content">
+                    <h3>Calculadora Simples</h3>
+                    <div class="project">
+                        <div class="calculator">
+                            <div class="calculator-display">
+                                <input type="text" id="calc-display" readonly>
+                            </div>
+                            <div class="calculator-buttons">
+                                <button class="calc-btn" value="7">7</button>
+                                <button class="calc-btn" value="8">8</button>
+                                <button class="calc-btn" value="9">9</button>
+                                <button class="calc-btn operator" value="/">/</button>
+                                
+                                <button class="calc-btn" value="4">4</button>
+                                <button class="calc-btn" value="5">5</button>
+                                <button class="calc-btn" value="6">6</button>
+                                <button class="calc-btn operator" value="*">×</button>
+                                
+                                <button class="calc-btn" value="1">1</button>
+                                <button class="calc-btn" value="2">2</button>
+                                <button class="calc-btn" value="3">3</button>
+                                <button class="calc-btn operator" value="-">-</button>
+                                
+                                <button class="calc-btn" value="0">0</button>
+                                <button class="calc-btn" value=".">.</button>
+                                <button class="calc-btn" value="=" id="calc-equals">=</button>
+                                <button class="calc-btn operator" value="+">+</button>
+                                
+                                <button class="calc-btn clear" value="clear" id="calc-clear">C</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Lista de Tarefas</h3>
+                    <div class="project">
+                        <div class="todo-app">
+                            <h4>Minha Lista de Tarefas</h4>
+                            <div class="todo-input">
+                                <input type="text" id="todo-task" placeholder="Nova tarefa...">
+                                <button id="add-todo">Adicionar</button>
+                            </div>
+                            <ul id="todo-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <p>Prática de JavaScript - © 2023 | Aprenda fazendo!</p>
+    </footer>
+    <button id="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+
+    <script src="js/script.js"></script>
+    <script src="js/aprenderjs.js"></script>
+</body>
+</html>

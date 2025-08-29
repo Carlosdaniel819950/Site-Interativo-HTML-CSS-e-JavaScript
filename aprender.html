@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprenda CSS - Do Básico ao Avançado</title>
+    <meta name="description" content="Guia de CSS do básico ao avançado com exemplos, prática interativa e desafios para estudantes.">
+    <link rel="stylesheet" href="css/aprender.css">
+    <link rel="stylesheet" href="css/aprenderjs.css">
+</head>
+<body>
+    <nav class="site-nav" aria-label="Navegação do site">
+        <div class="site-nav__inner">
+            <a class="brand" href="index.html">Web Guia</a>
+            <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menu">☰</button>
+            <ul id="primary-nav">
+                <li><a href="index.html">HTML</a></li>
+                <li><a href="aprender.html">CSS</a></li>
+                <li><a href="aprenderjs.html">JavaScript</a></li>
+            </ul>
+            <button id="theme-toggle" class="btn btn-ghost" type="button" aria-pressed="false" aria-label="Alternar modo escuro">🌙 Modo</button>
+        </div>
+    </nav>
+    <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo</a>
+    <header>
+        <h1>Aprenda CSS - Do Básico ao Avançado</h1>
+        <p>Um guia completo para dominar estilização web</p>
+    </header>
+
+    <nav aria-label="Navegação principal">
+        <ul>
+            <li><a href="index.html" class="nav-link">HTML</a></li>
+            <li><a href="#basics" class="nav-link">CSS Básico</a></li>
+            <li><a href="#selectors" class="nav-link">Seletores</a></li>
+            <li><a href="#layout" class="nav-link">Layout</a></li>
+            <li><a href="#responsive" class="nav-link">Responsivo</a></li>
+            <li><a href="#advanced" class="nav-link">Avançado</a></li>
+            <li><a href="#practice" class="nav-link">Prática</a></li>
+            <li><a href="aprenderjs.html" class="nav-link">JavaScript</a></li>
+        </ul>
+    </nav>
+
+    <div id="conteudo-principal" class="container">
+        <main>
+            <article id="basics">
+                <h2>CSS Básico</h2>
+                <div class="content">
+                    <h3>O que é CSS?</h3>
+                    <p>CSS (Cascading Style Sheets) é uma linguagem de estilo usada para descrever a apresentação de documentos HTML.</p>
+                    
+                    <h3>Sintaxe Básica</h3>
+                    <div class="code-example">
+                        <pre><code>seletor {
+    propriedade: valor;
+}</code></pre>
+                    </div>
+                    
+                    <h3>Formas de Adicionar CSS</h3>
+                    <div class="method">
+                        <h4>Inline (na linha)</h4>
+                        <div class="code-example">
+                            <pre><code>&lt;p style="color: blue;"&gt;Texto azul&lt;/p&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="method">
+                        <h4>Interno (na head)</h4>
+                        <div class="code-example">
+                            <pre><code>&lt;style&gt;
+    p {
+        color: blue;
+    }
+&lt;/style&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="method">
+                        <h4>Externo (arquivo .css)</h4>
+                        <div class="code-example">
+                            <pre><code>&lt;link rel="stylesheet" href="estilo.css"&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <h3>Propriedades Básicas</h3>
+                    <div class="properties-grid">
+                        <div class="property">
+                            <h4>color</h4>
+                            <p>Define a cor do texto</p>
+                            <div class="code-example">
+                                <pre><code>color: red;
+color: #ff0000;
+color: rgb(255, 0, 0);</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="property">
+                            <h4>background-color</h4>
+                            <p>Define a cor de fundo</p>
+                            <div class="code-example">
+                                <pre><code>background-color: blue;
+background-color: #0000ff;
+background-color: rgba(0, 0, 255, 0.5);</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="property">
+                            <h4>font-size</h4>
+                            <p>Define o tamanho da fonte</p>
+                            <div class="code-example">
+                                <pre><code>font-size: 16px;
+font-size: 1em;
+font-size: 100%;</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="property">
+                            <h4>margin e padding</h4>
+                            <p>Controlam espaçamentos externos e internos</p>
+                            <div class="code-example">
+                                <pre><code>margin: 10px;
+padding: 20px;
+
+/* Forma completa */
+margin: 10px 20px 10px 20px; /* top right bottom left */</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="selectors">
+                <h2>Seletores CSS</h2>
+                <div class="content">
+                    <h3>Seletores Básicos</h3>
+                    <div class="selectors-grid">
+                        <div class="selector">
+                            <h4>Seletor de Elemento</h4>
+                            <div class="code-example">
+                                <pre><code>p {
+    color: blue;
+}</code></pre>
+                            </div>
+                            <p>Seleciona todos os elementos &lt;p&gt;</p>
+                        </div>
+                        
+                        <div class="selector">
+                            <h4>Seletor de Classe</h4>
+                            <div class="code-example">
+                                <pre><code>.destaque {
+    font-weight: bold;
+}</code></pre>
+                            </div>
+                            <p>Seleciona elementos com class="destaque"</p>
+                        </div>
+                        
+                        <div class="selector">
+                            <h4>Seletor de ID</h4>
+                            <div class="code-example">
+                                <pre><code>#header {
+    height: 100px;
+}</code></pre>
+                            </div>
+                            <p>Seleciona o elemento com id="header"</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Seletores Avançados</h3>
+                    <div class="selectors-grid">
+                        <div class="selector">
+                            <h4>Seletor de Atributo</h4>
+                            <div class="code-example">
+                                <pre><code>a[target="_blank"] {
+    color: purple;
+}</code></pre>
+                            </div>
+                            <p>Seleciona links com target="_blank"</p>
+                        </div>
+                        
+                        <div class="selector">
+                            <h4>Seletor de Descendência</h4>
+                            <div class="code-example">
+                                <pre><code>div p {
+    margin: 10px;
+}</code></pre>
+                            </div>
+                            <p>Seleciona todos os &lt;p&gt; dentro de &lt;div&gt;</p>
+                        </div>
+                        
+                        <div class="selector">
+                            <h4>Seletor de Filho Direto</h4>
+                            <div class="code-example">
+                                <pre><code>div > p {
+    color: red;
+}</code></pre>
+                            </div>
+                            <p>Seleciona apenas &lt;p&gt; que são filhos diretos de &lt;div&gt;</p>
+                        </div>
+                        
+                        <div class="selector">
+                            <h4>Pseudo-classes</h4>
+                            <div class="code-example">
+                                <pre><code>a:hover {
+    text-decoration: underline;
+}
+
+li:nth-child(odd) {
+    background: #f0f0f0;
+}</code></pre>
+                            </div>
+                            <p>Seleciona elementos em estados específicos</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="layout">
+                <h2>Layout com CSS</h2>
+                <div class="content">
+                    <h3>Display Property</h3>
+                    <div class="properties-grid">
+                        <div class="property">
+                            <h4>block</h4>
+                            <p>Ocupa toda a largura disponível</p>
+                            <div class="code-example">
+                                <pre><code>div {
+    display: block;
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="property">
+                            <h4>inline</h4>
+                            <p>Ocupa apenas o espaço necessário</p>
+                            <div class="code-example">
+                                <pre><code>span {
+    display: inline;
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="property">
+                            <h4>inline-block</h4>
+                            <p>Mescla características de inline e block</p>
+                            <div class="code-example">
+                                <pre><code>button {
+    display: inline-block;
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="property">
+                            <h4>none</h4>
+                            <p>Esconde o elemento completamente</p>
+                            <div class="code-example">
+                                <pre><code>.hidden {
+    display: none;
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Position Property</h3>
+                    <div class="properties-grid">
+                        <div class="property">
+                            <h4>static (padrão)</h4>
+                            <p>Posicionamento normal do fluxo do documento</p>
+                        </div>
+                        
+                        <div class="property">
+                            <h4>relative</h4>
+                            <p>Posicionamento relativo à sua posição normal</p>
+                            <div class="code-example">
+                                <pre><code>.element {
+    position: relative;
+    top: 20px;
+    left: 30px;
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="property">
+                            <h4>absolute</h4>
+                            <p>Posicionamento relativo ao ancestral posicionado mais próximo</p>
+                            <div class="code-example">
+                                <pre><code>.element {
+    position: absolute;
+    top: 0;
+    right: 0;
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="property">
+                            <h4>fixed</h4>
+                            <p>Posicionamento relativo à viewport</p>
+                            <div class="code-example">
+                                <pre><code>.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Flexbox</h3>
+                    <p>Modelo de layout unidimensional para organizar itens em linhas ou colunas</p>
+                    <div class="code-example">
+                        <pre><code>.container {
+    display: flex;
+    justify-content: center; /* Alinhamento horizontal */
+    align-items: center; /* Alinhamento vertical */
+    flex-wrap: wrap; /* Quebra de linha */
+}
+
+.item {
+    flex: 1; /* Distribui espaço igualmente */
+}</code></pre>
+                    </div>
+                    
+                    <h3>CSS Grid</h3>
+                    <p>Sistema de layout bidimensional para organizar itens em linhas e colunas</p>
+                    <div class="code-example">
+                        <pre><code>.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* 3 colunas */
+    grid-template-rows: 100px auto; /* 2 linhas */
+    gap: 10px; /* Espaço entre células */
+}
+
+.item {
+    grid-column: 1 / 3; /* Ocupa da linha 1 à 3 */
+    grid-row: 1; /* Ocupa a linha 1 */
+}</code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="responsive">
+                <h2>Design Responsivo</h2>
+                <div class="content">
+                    <h3>Viewport Meta Tag</h3>
+                    <div class="code-example">
+                        <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+                    </div>
+                    <p>Essencial para sites mobile-friendly</p>
+                    
+                    <h3>Media Queries</h3>
+                    <p>Permitem aplicar estilos diferentes com base nas características do dispositivo</p>
+                    <div class="code-example">
+                        <pre><code>/* Tablets */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    .menu {
+        display: none;
+    }
+}</code></pre>
+                    </div>
+                    
+                    <h3>Unidades Responsivas</h3>
+                    <div class="properties-grid">
+                        <div class="property">
+                            <h4>% (porcentagem)</h4>
+                            <p>Relativo ao elemento pai</p>
+                            <div class="code-example">
+                                <pre><code>.width-half {
+    width: 50%;
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="property">
+                            <h4>vw/vh (viewport width/height)</h4>
+                            <p>Relativo à largura/altura da viewport</p>
+                            <div class="code-example">
+                                <pre><code>.full-width {
+    width: 100vw;
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="property">
+                            <h4>rem/em</h4>
+                            <p>Relativo ao tamanho da fonte</p>
+                            <div class="code-example">
+                                <pre><code>h1 {
+    font-size: 2rem; /* 2x o tamanho da fonte raiz */
+}
+
+p {
+    font-size: 1.2em; /* 1.2x o tamanho da fonte do elemento pai */
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="advanced">
+                <h2>Tópicos Avançados</h2>
+                <div class="content">
+                    <h3>Animações e Transições</h3>
+                    <div class="properties-grid">
+                        <div class="property">
+                            <h4>transition</h4>
+                            <p>Suaviza mudanças de propriedades</p>
+                            <div class="code-example">
+                                <pre><code>.button {
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="property">
+                            <h4>@keyframes</h4>
+                            <p>Define animações complexas</p>
+                            <div class="code-example">
+                                <pre><code>@keyframes slidein {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.element {
+    animation: slidein 0.5s ease;
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Variáveis CSS (Custom Properties)</h3>
+                    <div class="code-example">
+                        <pre><code>:root {
+    --primary-color: #3498db;
+    --spacing: 20px;
+}
+
+.element {
+    color: var(--primary-color);
+    margin: var(--spacing);
+}</code></pre>
+                    </div>
+                    
+                    <h3>Pré-processadores (SASS/SCSS)</h3>
+                    <p>Estendem o CSS com variáveis, nesting, mixins e mais</p>
+                    <div class="code-example">
+                        <pre><code>// Variáveis
+$primary-color: #3498db;
+$spacing: 20px;
+
+// Nesting
+nav {
+    ul {
+        margin: 0;
+        li {
+            display: inline-block;
+            a {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+// Mixins
+@mixin border-radius($radius) {
+    border-radius: $radius;
+}
+
+.button {
+    @include border-radius(5px);
+}</code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="practice">
+                <h2>Área de Prática</h2>
+                <div class="content">
+                    <h3>Editor Interativo</h3>
+                    <p>Experimente com CSS abaixo e veja o resultado em tempo real:</p>
+                    
+                    <div class="practice-area">
+                        <div class="editor">
+                            <h4>Seu CSS</h4>
+                            <textarea id="css-editor" placeholder="Digite seu CSS aqui...">.practice-box {
+    width: 200px;
+    height: 200px;
+    background-color: #3498db;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}</textarea>
+                            <button id="apply-css">Aplicar CSS</button>
+                            <button id="reset-css">Resetar</button>
+                        </div>
+                        
+                        <div class="preview">
+                            <h4>Preview</h4>
+                            <div class="preview-container">
+                                <div class="practice-box">Caixa de Prática</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Desafios CSS</h3>
+                    <div class="challenges">
+                        <div class="challenge">
+                            <h4>Desafio 1: Centralizar Verticalmente</h4>
+                            <p>Crie uma div com texto centralizado vertical e horizontalmente</p>
+                            <button class="challenge-btn" data-target="challenge1">Ver Solução</button>
+                            <div class="solution" id="challenge1">
+                                <pre><code>.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="challenge">
+                            <h4>Desafio 2: Criar um Botão Estilizado</h4>
+                            <p>Crie um botão com hover effect e transição suave</p>
+                            <button class="challenge-btn" data-target="challenge2">Ver Solução</button>
+                            <div class="solution" id="challenge2">
+                                <pre><code>.styled-button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.styled-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <p>Guia Completo de CSS - © 2023 | Pronto para dominar o desenvolvimento web frontend!</p>
+    </footer>
+    <button id="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+
+    <script src="js/script.js"></script>
+    <script src="js/aprender.js"></script>
+</body>
+</html>

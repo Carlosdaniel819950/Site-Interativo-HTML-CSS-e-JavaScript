@@ -1,0 +1,321 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Barra fixa unificada */
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(16, 20, 24, 0.85);
+    backdrop-filter: blur(6px);
+}
+.site-nav__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.menu-toggle { display: none; background: transparent; border: 1px solid rgba(255,255,255,0.5); color: #fff; padding: 6px 10px; border-radius: 6px; }
+.site-nav .brand {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.site-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+}
+.site-nav ul a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+.site-nav ul a:hover,
+.site-nav ul a.active {
+    background: rgba(255,255,255,0.18);
+}
+
+header {
+    text-align: center;
+    padding: 30px 0;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Navegação no topo para troca entre páginas */
+.top-nav {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.top-nav a {
+    color: #fff;
+    text-decoration: none;
+    background: rgba(255,255,255,0.12);
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.top-nav a:hover,
+.top-nav a.active {
+    background: rgba(255,255,255,0.25);
+}
+
+.btn-ghost {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #6a11cb;
+    margin: 25px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+h3 {
+    color: #2575fc;
+    margin: 20px 0 10px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.section {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    min-width: 300px;
+}
+
+.code-example {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+}
+.code-example { position: relative; }
+.code-example .copy-code { position: absolute; top: 8px; right: 8px; font-size: 12px; padding: 4px 8px; border: none; border-radius: 4px; background: #6a11cb; color: #fff; cursor: pointer; }
+.code-example .copy-code:disabled { opacity: 0.7; }
+
+.demo-area {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 15px 0;
+    background-color: #f9f9f9;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #e1f0ff;
+    color: #0066cc;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    margin: 5px 0;
+}
+
+.note {
+    background-color: #fff8e1;
+    border-left: 4px solid #ffc107;
+    padding: 10px 15px;
+    margin: 15px 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #666;
+}
+
+/* Botão voltar ao topo */
+#back-to-top {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #6a11cb;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    display: none;
+}
+#back-to-top.show {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    background: #6a11cb;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 10px 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #2575fc;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+form {
+    margin: 15px 0;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .menu-toggle { display: inline-block; }
+    .site-nav ul { display: none; position: absolute; top: 48px; right: 16px; background: rgba(16,20,24,0.96); padding: 12px; border-radius: 8px; flex-direction: column; gap: 8px; }
+    .site-nav ul.open { display: flex; }
+}
+
+/* Acessibilidade básica */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 8px 12px;
+    background: #2575fc;
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* Modo de cores (global) */
+:root {
+    --bg: #f5f7fa;
+    --text: #333;
+    --card: #ffffff;
+    --muted: #e9eef5;
+    --border: #ddd;
+    --primary: #6a11cb;
+}
+
+body.dark {
+    --bg: #101418;
+    --text: #e6e6e6;
+    --card: #141a22;
+    --muted: #1b222c;
+    --border: #2b3440;
+    --primary: #8b5cf6;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+body,
+.section,
+.demo-area {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.section,
+.demo-area {
+    background: var(--card);
+}
+
+/* Ajustes de contraste em modo escuro e claro */
+.demo-area { border-color: var(--border); background-color: var(--muted); }
+.note { background-color: #fff8e1; border-left-color: #ffc107; }
+body.dark .note { background-color: #2b1f00; border-left-color: #ffb300; color: #ffe7a3; }
+
+/* Controles de formulário legíveis em ambos os temas */
+input, textarea, select {
+    background-color: #ffffff;
+    color: #111;
+    border: 1px solid var(--border);
+}
+body.dark input, body.dark textarea, body.dark select {
+    background-color: #0f141a;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+input:focus, textarea:focus, select:focus { outline: 2px solid var(--primary); }
+
+/* Código: melhorar legibilidade no dark */
+.code-example { background-color: #1e1e1e; color: #e6e6e6; }
+body.dark .code-example { background-color: #0d1117; color: #e6edf3; }
+.code-example { border: 1px solid var(--border); }

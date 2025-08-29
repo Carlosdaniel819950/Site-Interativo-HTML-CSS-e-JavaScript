@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guia completo e interativo de HTML para iniciantes, com exemplos práticos, tabelas, formulários e dicas de acessibilidade.">
+    <title>Guia Completo de HTML</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="site-nav" aria-label="Navegação do site">
+        <div class="site-nav__inner">
+            <a class="brand" href="index.html">Web Guia</a>
+            <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menu">☰</button>
+            <ul id="primary-nav">
+                <li><a href="index.html">HTML</a></li>
+                <li><a href="aprender.html">CSS</a></li>
+                <li><a href="aprenderjs.html">JavaScript</a></li>
+            </ul>
+            <button id="theme-toggle" class="btn btn-ghost" type="button" aria-pressed="false" aria-label="Alternar modo escuro">🌙 Modo</button>
+        </div>
+    </nav>
+    <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo</a>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Guia Completo de HTML</h1>
+        <p>Aprenda os principais elementos HTML com exemplos práticos</p>
+        <nav aria-label="Navegação principal">
+            <ul class="top-nav">
+                <li><a href="index.html">HTML</a></li>
+                <li><a href="aprender.html">CSS</a></li>
+                <li><a href="aprenderjs.html">JavaScript</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div id="conteudo-principal" class="container">
+        <div class="section">
+            <h2>Estrutura Básica HTML</h2>
+            <p>Todo documento HTML precisa ter uma estrutura básica:</p>
+            
+            <div class="code-example">
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html lang="pt-BR"&gt;<br>
+                &lt;head&gt;<br>
+                &nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+                &nbsp;&nbsp;&lt;title&gt;Título da Página&lt;/title&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                &nbsp;&nbsp;&lt;!-- Conteúdo da página --&gt;<br>
+                &lt;/body&gt;<br>
+                &lt;/html&gt;
+            </div>
+            
+            <div class="note">
+                <strong>Nota:</strong> A declaração &lt;!DOCTYPE html&gt; define que este é um documento HTML5.
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Elementos de Texto</h2>
+            
+            <h3>Cabeçalhos</h3>
+            <div class="demo-area">
+                <h1>Heading 1</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+                <h4>Heading 4</h4>
+                <h5>Heading 5</h5>
+                <h6>Heading 6</h6>
+            </div>
+            
+            <h3>Parágrafos e Formatação</h3>
+            <div class="demo-area">
+                <p>Isso é um parágrafo normal.</p>
+                <p><strong>Texto em negrito</strong> e <em>texto em itálico</em>.</p>
+                <p><u>Texto sublinhado</u> e <s>texto tachado</s>.</p>
+            </div>
+            
+            <div class="code-example">
+                &lt;p&gt;Isso é um parágrafo normal.&lt;/p&gt;<br>
+                &lt;p&gt;&lt;strong&gt;Texto em negrito&lt;/strong&gt; e &lt;em&gt;texto em itálico&lt;/em&gt;.&lt;/p&gt;<br>
+                &lt;p&gt;&lt;u&gt;Texto sublinhado&lt;/u&gt; e &lt;s&gt;texto tachado&lt;/s&gt;.&lt;/p&gt;
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Listas</h2>
+            
+            <h3>Lista Não Ordenada</h3>
+            <div class="demo-area">
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+            
+            <h3>Lista Ordenada</h3>
+            <div class="demo-area">
+                <ol>
+                    <li>Primeiro item</li>
+                    <li>Segundo item</li>
+                    <li>Terceiro item</li>
+                </ol>
+            </div>
+            
+            <div class="code-example">
+                &lt;ul&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;Item 1&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;Item 2&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;Item 3&lt;/li&gt;<br>
+                &lt;/ul&gt;<br><br>
+                
+                &lt;ol&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;Primeiro item&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;Segundo item&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;Terceiro item&lt;/li&gt;<br>
+                &lt;/ol&gt;
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Links e Imagens</h2>
+            
+            <h3>Links</h3>
+            <div class="demo-area">
+                <a href="#link">Isso é um link</a> | 
+                <a href="#link-visitado">Link visitado</a> | 
+                <a href="#link-ativo">Link ativo</a>
+            </div>
+            
+            <h3>Imagens</h3>
+            <div class="demo-area">
+                <img src="https://via.placeholder.com/150" alt="Exemplo de imagem">
+            </div>
+            
+            <div class="code-example">
+                &lt;a href="https://www.exemplo.com"&gt;Isso é um link&lt;/a&gt;<br><br>
+                
+                &lt;img src="imagem.jpg" alt="Descrição da imagem"&gt;
+            </div>
+            
+            <div class="note">
+                <strong>Dica:</strong> Sempre use o atributo <span class="tag">alt</span> em imagens para acessibilidade.
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Tabelas</h2>
+            
+            <div class="demo-area">
+                <table>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Idade</th>
+                        <th>País</th>
+                    </tr>
+                    <tr>
+                        <td>João</td>
+                        <td>25</td>
+                        <td>Brasil</td>
+                    </tr>
+                    <tr>
+                        <td>Maria</td>
+                        <td>32</td>
+                        <td>Portugal</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="code-example">
+                &lt;table&gt;<br>
+                &nbsp;&nbsp;&lt;tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Nome&lt;/th&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Idade&lt;/th&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;País&lt;/th&gt;<br>
+                &nbsp;&nbsp;&lt;/tr&gt;<br>
+                &nbsp;&nbsp;&lt;tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;João&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;25&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Brasil&lt;/td&gt;<br>
+                &nbsp;&nbsp;&lt;/tr&gt;<br>
+                &nbsp;&nbsp;&lt;tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Maria&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;32&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Portugal&lt;/td&gt;<br>
+                &nbsp;&nbsp;&lt;/tr&gt;<br>
+                &lt;/table&gt;
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Formulários</h2>
+            
+            <div class="demo-area">
+                <form>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome">
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem"></textarea>
+                    
+                    <label for="pais">País:</label>
+                    <select id="pais" name="pais">
+                        <option value="br">Brasil</option>
+                        <option value="pt">Portugal</option>
+                        <option value="us">Estados Unidos</option>
+                    </select>
+                    
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+            
+            <div class="code-example">
+                &lt;form&gt;<br>
+                &nbsp;&nbsp;&lt;label for="nome"&gt;Nome:&lt;/label&gt;<br>
+                &nbsp;&nbsp;&lt;input type="text" id="nome" name="nome"&gt;<br><br>
+                
+                &nbsp;&nbsp;&lt;label for="email"&gt;Email:&lt;/label&gt;<br>
+                &nbsp;&nbsp;&lt;input type="email" id="email" name="email"&gt;<br><br>
+                
+                &nbsp;&nbsp;&lt;input type="submit" value="Enviar"&gt;<br>
+                &lt;/form&gt;
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Elementos Semânticos</h2>
+            
+            <p>HTML5 introduziu elementos semânticos que dão significado à estrutura:</p>
+            
+            <div class="code-example">
+                &lt;header&gt;Cabeçalho&lt;/header&gt;<br>
+                &lt;nav&gt;Navegação&lt;/nav&gt;<br>
+                &lt;main&gt;<br>
+                &nbsp;&nbsp;&lt;article&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;section&gt;Seção 1&lt;/section&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;section&gt;Seção 2&lt;/section&gt;<br>
+                &nbsp;&nbsp;&lt;/article&gt;<br>
+                &lt;/main&gt;<br>
+                &lt;aside&gt;Conteúdo lateral&lt;/aside&gt;<br>
+                &lt;footer&gt;Rodapé&lt;/footer&gt;
+            </div>
+            
+            <div class="note">
+                <strong>Importante:</strong> Use elementos semânticos para melhorar a acessibilidade e SEO.
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Próximos Passos</h2>
+            
+            <p>Agora que você conhece os elementos HTML básicos, é hora de:</p>
+            
+            <ol>
+                <li>Praticar criando páginas simples</li>
+                <li>Aprender CSS para estilizar suas páginas</li>
+                <li>Aprender JavaScript para adicionar interatividade</li>
+                <li>Explorar recursos HTML mais avançados</li>
+            </ol>
+            
+            <div class="note">
+                <strong>Lembre-se:</strong> A prática constante é a chave para aprender HTML.
+            </div>
+            
+            <a href="#" class="btn">Praticar HTML</a> 
+            <a href="aprender.html" class="btn">Aprender CSS</a>
+            <a href="aprenderjs.html" class="btn">Estudar JavaScript</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Guia de HTML para iniciantes - &copy; 2023</p>
+        <p>Pronto para começar sua jornada no desenvolvimento web!</p>
+    </footer>
+    <button id="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+    <script src="js/script.js"></script>
+</body>
+</html>
